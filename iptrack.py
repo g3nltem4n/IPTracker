@@ -3,7 +3,14 @@ import urllib.request
 import urllib.error
 import json
 from urllib.request import urlopen
-from colorama import Fore, Back, Style 
+
+class bcolors:
+    OK = '\033[92m' #GREEN
+    WARNING = '\033[93m' #YELLOW
+    FAIL = '\033[91m' #RED
+    RESET = '\033[0m' #RESET COLOR
+
+
 
 while True:
     ip=input("Quel est votre IP cible: ")
@@ -12,11 +19,11 @@ while True:
     data = response.read()
     values = json.loads(data)
     
-    print(Fore.GREEN + "[+]" Fore.BLUE + "IP: " + values['query'])
-    print(Fore.GREEN + "[+]" Fore.BLUE + " Ville : " + values['city'])
-    print(Fore.GREEN + "[+]" Fore.BLUE + " ISP : " + values['isp'])
-    print(Fore.GREEN + "[+]" Fore.BLUE + "Pays : " + values['country'])
-    print(Fore.GREEN + "[+]" Fore.BLUE + "Region : " + values['region'])
-    print(Fore.GREEN + "[+]" Fore.BLUE + "Time zone : " + values['timezone'])
+    print(bcolors.WARNING + "[+]" + bcolors.OK + " IP: " + values['query'] + bcolors.RESET)
+    print(bcolors.WARNING + "[+]" + bcolors.OK + " Ville : " + values['city'] + bcolors.RESET)
+    print(bcolors.WARNING + "[+]" + bcolors.OK + " ISP : " + values['isp'] + bcolors.RESET)
+    print(bcolors.WARNING + "[+]" + bcolors.OK + "Pays : " + values['country'] + bcolors.RESET)
+    print(bcolors.WARNING + "[+]" + bcolors.OK + "Region : " + values['region'] + bcolors.RESET)
+    print(bcolors.WARNING + "[+]" + bcolors.OK + "Time zone : " + values['timezone'] + bcolors.RESET)
 
     break
