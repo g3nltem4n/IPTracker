@@ -13,7 +13,7 @@ class bcolors:
 
 
 while True:
-    ip=input("Quel est votre IP cible: ")
+    ip=input(bcolors.WARNING + "[+]" + bcolors.OK + " Quel est votre IP cible: ")
     url = "http://ip-api.com/json/"
     response = urlopen(url + ip)
     data = response.read()
@@ -22,8 +22,8 @@ while True:
     print(bcolors.WARNING + "[+]" + bcolors.OK + " IP: " + values['query'] + bcolors.RESET)
     print(bcolors.WARNING + "[+]" + bcolors.OK + " Ville : " + values['city'] + bcolors.RESET)
     print(bcolors.WARNING + "[+]" + bcolors.OK + " ISP : " + values['isp'] + bcolors.RESET)
-    print(bcolors.WARNING + "[+]" + bcolors.OK + "Pays : " + values['country'] + bcolors.RESET)
-    print(bcolors.WARNING + "[+]" + bcolors.OK + "Region : " + values['region'] + bcolors.RESET)
-    print(bcolors.WARNING + "[+]" + bcolors.OK + "Time zone : " + values['timezone'] + bcolors.RESET)
+    print(bcolors.WARNING + "[+]" + bcolors.OK + " Pays : " + values['country'] + bcolors.RESET)
+    print(bcolors.WARNING + "[+]" + bcolors.OK + " Region : " + values['region'] + bcolors.RESET)
+    print(bcolors.WARNING + "[+]" + bcolors.OK + " Time zone : " + values['timezone'] + bcolors.RESET)
 
     break
