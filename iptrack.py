@@ -11,11 +11,11 @@ while True:
     data = response.read()
     values = json.loads(data)
     
-    print("IP: " + values['query'])
-    print(" Ville : " + values['city'])
-    print(" ISP : " + values['isp'])
-    print("Pays : " + values['country'])
-    print("Region : " + values['region'])
-    print("Time zone : " + values['timezone'])
+    print(f"IP: " + values['query'])
+    print(f" Ville : " + values['city'])
+    print(f" ISP : " + values['isp'])
+    print(f"Pays : " + values['country'])
+    print(f"Region : " + values['region'])
+    print(f"Time zone : " + values['timezone'])
 
     break
